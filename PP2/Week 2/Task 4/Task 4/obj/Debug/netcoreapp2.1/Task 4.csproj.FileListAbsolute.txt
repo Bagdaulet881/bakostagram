@@ -1,0 +1,11 @@
+C:\csh\PP2\Week 2\Task 4\Task 4\bin\Debug\netcoreapp2.1\Task 4.deps.json
+C:\csh\PP2\Week 2\Task 4\Task 4\bin\Debug\netcoreapp2.1\Task 4.runtimeconfig.json
+C:\csh\PP2\Week 2\Task 4\Task 4\bin\Debug\netcoreapp2.1\Task 4.runtimeconfig.dev.json
+C:\csh\PP2\Week 2\Task 4\Task 4\bin\Debug\netcoreapp2.1\Task 4.dll
+C:\csh\PP2\Week 2\Task 4\Task 4\bin\Debug\netcoreapp2.1\Task 4.pdb
+C:\csh\PP2\Week 2\Task 4\Task 4\obj\Debug\netcoreapp2.1\Task 4.csprojAssemblyReference.cache
+C:\csh\PP2\Week 2\Task 4\Task 4\obj\Debug\netcoreapp2.1\Task 4.csproj.CoreCompileInputs.cache
+C:\csh\PP2\Week 2\Task 4\Task 4\obj\Debug\netcoreapp2.1\Task 4.AssemblyInfoInputs.cache
+C:\csh\PP2\Week 2\Task 4\Task 4\obj\Debug\netcoreapp2.1\Task 4.AssemblyInfo.cs
+C:\csh\PP2\Week 2\Task 4\Task 4\obj\Debug\netcoreapp2.1\Task 4.dll
+C:\csh\PP2\Week 2\Task 4\Task 4\obj\Debug\netcoreapp2.1\Task 4.pdb
