@@ -5,3 +5,10 @@ C:\csh\ConsoleApp6\ConsoleApp6\obj\Debug\ConsoleApp6.csprojAssemblyReference.cac
 C:\csh\ConsoleApp6\ConsoleApp6\obj\Debug\ConsoleApp6.csproj.CoreCompileInputs.cache
 C:\csh\ConsoleApp6\ConsoleApp6\obj\Debug\ConsoleApp6.exe
 C:\csh\ConsoleApp6\ConsoleApp6\obj\Debug\ConsoleApp6.pdb
+C:\csh\PP2\Week 1\Task3\ConsoleApp6\bin\Debug\ConsoleApp6.exe.config
+C:\csh\PP2\Week 1\Task3\ConsoleApp6\bin\Debug\ConsoleApp6.exe
+C:\csh\PP2\Week 1\Task3\ConsoleApp6\bin\Debug\ConsoleApp6.pdb
+C:\csh\PP2\Week 1\Task3\ConsoleApp6\obj\Debug\ConsoleApp6.csprojAssemblyReference.cache
+C:\csh\PP2\Week 1\Task3\ConsoleApp6\obj\Debug\ConsoleApp6.csproj.CoreCompileInputs.cache
+C:\csh\PP2\Week 1\Task3\ConsoleApp6\obj\Debug\ConsoleApp6.exe
+C:\csh\PP2\Week 1\Task3\ConsoleApp6\obj\Debug\ConsoleApp6.pdb

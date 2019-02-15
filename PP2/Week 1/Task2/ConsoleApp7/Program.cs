@@ -31,6 +31,8 @@ namespace ConsoleApp7
             stud.Id = Console.ReadLine(); //Input
             stud.name = Console.ReadLine();
             stud.year = Convert.ToInt32(Console.ReadLine());
+            stud.year++;
+           
 
 
             Console.WriteLine(stud.Id +" "+ stud.name + " " + stud.year); //output  

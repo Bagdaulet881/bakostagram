@@ -12,7 +12,6 @@ namespace ConsoleApp5
         {
             int n; //size of array
             int count=0;
-            int l = 1;
             n = Convert.ToInt32(Console.ReadLine());
             int[] arr = new int[n];
             int[] prm = new int[n];
@@ -21,26 +20,32 @@ namespace ConsoleApp5
             {
                 arr[i] = Convert.ToInt32(Console.ReadLine());// input to array
             }
+
+            int flag = 0;
+            int l = 0;
             for (int i = 0; i < n; i++)
             {
-                for (int j = 1; j < n+1; j++) // numbering untill 'n'
+                for (int j = 2; j <= arr[i] / 2; j++)
                 {
-                    if (arr[i] % j == 0)// if one element divided to 'j'  then count++
+                    if (arr[i] % j == 0)
                     {
-                        count++;
+                        flag = 1;
                     }
                 }
-
-                if (count == 2) //if count=2 then it means that element of array is prime
+                if (flag == 0)
                 {
-                    prm[l] = arr[i]; //'prm' is new array which will contain prime numbers
-                    l++; //l++ it's size of new array which is increasing with number of prime numbers
-                    count = 0; //count=0 to reset and start loop again
+                    prm[l] = arr[i];
+                    l++;
+                    flag = 0;
                 }
-                else count = 0; //count=0 to reset and start loop again
+                else
+                {
+                    flag = 0;
+                }
             }
+            //OUTPUT
             Console.WriteLine(l); //shows how many primes found
-            for (int w = 1; w < l; w++)
+            for (int w = 0; w < l; w++)
             {
                Console.Write($"{prm[w]} "); //outputs prime numbers
             }

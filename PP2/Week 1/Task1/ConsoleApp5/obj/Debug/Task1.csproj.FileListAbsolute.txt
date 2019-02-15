@@ -12,3 +12,10 @@ C:\csh\ConsoleApp5\ConsoleApp5\obj\Debug\Task1.csprojAssemblyReference.cache
 C:\csh\ConsoleApp5\ConsoleApp5\obj\Debug\Task1.csproj.CoreCompileInputs.cache
 C:\csh\ConsoleApp5\ConsoleApp5\obj\Debug\ConsoleApp5.exe
 C:\csh\ConsoleApp5\ConsoleApp5\obj\Debug\ConsoleApp5.pdb
+C:\csh\PP2\Week 1\Task1\ConsoleApp5\bin\Debug\ConsoleApp5.exe.config
+C:\csh\PP2\Week 1\Task1\ConsoleApp5\bin\Debug\ConsoleApp5.exe
+C:\csh\PP2\Week 1\Task1\ConsoleApp5\bin\Debug\ConsoleApp5.pdb
+C:\csh\PP2\Week 1\Task1\ConsoleApp5\obj\Debug\Task1.csprojAssemblyReference.cache
+C:\csh\PP2\Week 1\Task1\ConsoleApp5\obj\Debug\Task1.csproj.CoreCompileInputs.cache
+C:\csh\PP2\Week 1\Task1\ConsoleApp5\obj\Debug\ConsoleApp5.exe
+C:\csh\PP2\Week 1\Task1\ConsoleApp5\obj\Debug\ConsoleApp5.pdb
