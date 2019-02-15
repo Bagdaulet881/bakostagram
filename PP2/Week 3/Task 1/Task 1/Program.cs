@@ -1,181 +1,180 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.IO;
 
-namespace Task_1
+namespace FarManager
 {
-    class Folder
+    class FarManager
     {
-        FileSystemInfo[] contents;
-        int selectedIndex;
+        public int cursor;                                                  //class global variable declaration, cursor for strings
+        public int size;                                                    
+        public string path;                                                 
 
-        public Folder(FileSystemInfo[] fileSystemInfos)
+
+
+        public FarManager(string path)                                      //constructor for creating a new object for a class
         {
-            selectedIndex = 0;
-            contents = fileSystemInfos; //getting all files
+            this.path = path;                                            
+            cursor = 0;                                                     
+            DirectoryInfo directory = new DirectoryInfo(path);              
+            size = directory.GetFileSystemInfos().Length;                   
         }
 
-        public void PrintFolder()
+
+
+
+        public void Up()                                                     
         {
+            cursor--;
+            if (cursor < 0)
+                cursor = size - 1;
+        }
+
+
+
+        public void Down()                                                 
+        {
+            cursor++;
+            if (cursor == size)
+                cursor = 0;
+        }
+
+        public void Color(FileSystemInfo fs, int index)                     
+        {
+
+
+            if (index == cursor)                                            //cursor color
+            {
+                Console.BackgroundColor = ConsoleColor.DarkMagenta;
+                Console.ForegroundColor = ConsoleColor.Black;
+            }
+
+
+            else if (fs.GetType() == typeof(FileInfo))                   //files will be displayed in yellow
+            {
+                Console.BackgroundColor = ConsoleColor.Black;
+                Console.ForegroundColor = ConsoleColor.Yellow;
+            }
+
+
+            else                                                         //directories will be presented in white
+            {
+                Console.BackgroundColor = ConsoleColor.Black;
+                Console.ForegroundColor = ConsoleColor.White;
+            }
+        }
+
+        public void Show()                                                   //Print
+        {
+            Console.BackgroundColor = ConsoleColor.Black;
             Console.Clear();
-
-            for (int i = 0; i < contents.Length; i++)
+            Console.BackgroundColor = ConsoleColor.Black;
+            Console.ForegroundColor = ConsoleColor.DarkMagenta;
+            Console.SetCursorPosition(6, 0);
+            Console.WriteLine(path);                                         //Heading with path
+            Console.WriteLine();
+            DirectoryInfo directory = new DirectoryInfo(path);
+            FileSystemInfo[] fs = directory.GetFileSystemInfos();            //Get all files and folders
+            size = fs.Length;                                                //Length
+            for (int i = 0; i < fs.Length; i++)                              //Output
             {
-                // Setup colors for foreground and background colors
-                if (i != 0)
+                Color(fs[i], i);                                           
+                Console.WriteLine(i + 1 + ". " + fs[i].Name);                
+            }
+        }
+
+        public void Start()                                                  
+        {
+            DirectoryInfo directory = new DirectoryInfo(path);               //getting information about a specific directory
+            ConsoleKeyInfo consoleKey = Console.ReadKey();                   //ConsoleKey
+            FileSystemInfo fs = null;                                        //Empty FileSystem
+            while (true)                                                    
+            {
+                Show();                                                      //PrintOut
+                consoleKey = Console.ReadKey();                              //reading keys
+                int k = 0;
+                for (int i = 0; i < directory.GetFileSystemInfos().Length; i++)// run through the main directory
                 {
-                    if (i == selectedIndex)
+                    if (cursor == k)
                     {
-                        Console.BackgroundColor = ConsoleColor.DarkMagenta;
-                        Console.ForegroundColor = ConsoleColor.White;
+                        fs = directory.GetFileSystemInfos()[i];                //assigning the file or directory FS in which the cursor is located
+                        break;
                     }
-                    else
+                    k++;
+                }
+                if (consoleKey.Key == ConsoleKey.Escape)                       //press Escape to return to the parent folder
+                {
+                    cursor = 0;
+                    directory = directory.Parent;
+                    path = directory.FullName;
+                }
+                if (consoleKey.Key == ConsoleKey.UpArrow)                      
+                    Up();
+                if (consoleKey.Key == ConsoleKey.DownArrow)                   
+                    Down();
+                if (consoleKey.Key == ConsoleKey.Enter)                        //press Enter to open a directory or text file
+                {
+                    if (fs.GetType() == typeof(DirectoryInfo))                
                     {
-                        Console.BackgroundColor = ConsoleColor.Black;
+                        cursor = 0;
+                        directory = new DirectoryInfo(fs.FullName);
+                        path = fs.FullName;
+                    }
+                    if (fs.GetType() == typeof(FileInfo))                      //open txt file
+                    {
+                        Console.BackgroundColor = ConsoleColor.White;          
+                        Console.ForegroundColor = ConsoleColor.Black;          
+                        Console.Clear();
+                        StreamReader sr = new StreamReader(fs.FullName);       
+                        string s = sr.ReadToEnd();                             
+                        Console.WriteLine(s);                                  
+                        sr.Close();                                            
+                        Console.ReadKey();
                     }
                 }
-                if (contents[i].GetType() == typeof(DirectoryInfo))
+                if (consoleKey.Key == ConsoleKey.Delete)                       //Delete files and directories
                 {
-                    Console.ForegroundColor = ConsoleColor.DarkRed; //if this is file
+                    if (fs.GetType() == typeof(FileInfo))                      //file check
+                        File.Delete(fs.FullName);                              
+                    else if (fs.GetType() == typeof(DirectoryInfo))            //folder check
+                        Directory.Delete(fs.FullName, true);                   
                 }
-                else // FileInfo
+                if (consoleKey.Key == ConsoleKey.R)                           //pressing the R key to rename files and directories
                 {
-                    Console.ForegroundColor = ConsoleColor.Yellow; //if this is folder
+                    if (fs.GetType() == typeof(FileInfo))                      //file check
+                    {
+                        Console.BackgroundColor = ConsoleColor.Red;           
+                        Console.Clear(); //clearing it
+                        Console.ForegroundColor = ConsoleColor.DarkMagenta;
+                        Console.WriteLine("Type in new file name:");
+                        string newFileName = Console.ReadLine();               //reading new file name
+                        string sourceFile = fs.FullName;                       //sourcefile
+                        string destFile = path + "/" + newFileName;           
+                        File.Move(sourceFile, destFile);                       //rename method by move
+                    }
+                    if (fs.GetType() == typeof(DirectoryInfo))                  //folder check
+                    {
+                        Console.BackgroundColor = ConsoleColor.DarkCyan;           
+                        Console.Clear();                                       
+                        Console.ForegroundColor = ConsoleColor.DarkMagenta;
+                        Console.WriteLine("Type in new directory name:");
+                        string newDirectoryName = Console.ReadLine();          //reading new directory name
+                        string sourceDirectory = fs.FullName;                  //sourceDirectory
+                        string destDirectory = path + "/" + newDirectoryName;  
+                        Directory.Move(sourceDirectory, destDirectory);        //rename method by move
+                    }
                 }
-
-                Console.WriteLine(contents[i].Name);
             }
-        }
-        public void Up()
-        {
-            if (selectedIndex == 0)
-            {
-                // note: arrays start at 0, not 1
-                selectedIndex = contents.Length - 1;
-            }
-            else
-            {
-                selectedIndex--;
-            }
-        }
-
-        public void Down()
-        {
-            if (selectedIndex == contents.Length - 1)
-            {
-                selectedIndex = 0;
-            }
-            else
-            {
-                selectedIndex++;
-            }
-        }
-        public FileSystemInfo GetSelectedObj()
-        {
-            return contents[selectedIndex]; //gets folder(contents) which is placed at index
         }
     }
-    
+
     class Program
     {
         static void Main(string[] args)
         {
-            string path = @"C:\csh\PP2\Week 3\Task 1\Task 1\Filefortest";
-            DirectoryInfo dir = new DirectoryInfo(@path);
-            Folder folder = new Folder(dir.GetFileSystemInfos()); //'dir.GetFileSystemInfos()' representing all the files and subdirectories in a path
-
-
-            Stack<Folder> dirs = new Stack<Folder>(); //creating stack ;)
-            dirs.Push(folder);
-            bool run = true; //flag for 'while' loop
-            bool directoryMode = true; // true = directory, false = file
-
-            while (run)
-            {
-                if (directoryMode)
-                {
-                    dirs.Peek().PrintFolder();
-                }
-
-                ConsoleKeyInfo pressedKey = Console.ReadKey();
-                switch (pressedKey.Key)
-                {
-                    case ConsoleKey.UpArrow:
-                        dirs.Peek().Up();
-                        break;
-                    case ConsoleKey.DownArrow:
-                        dirs.Peek().Down();
-                        break;
-
-                    case ConsoleKey.Enter:
-
-                        FileSystemInfo selected = dirs.Peek().GetSelectedObj();
-
-                        if (selected.GetType() == typeof(DirectoryInfo))
-                        {
-                            var fInfos = (selected as DirectoryInfo).GetFileSystemInfos();
-                            dirs.Push(new Folder(fInfos));
-                        }
-                        else
-                        {
-                            string fullPath = (selected as FileInfo).FullName; //getting new directory of new file
-                            FileStream fileStream = new FileStream(fullPath, FileMode.Open, FileAccess.Read); //Getting access to read a file which placed in 'fullPat'
-                            StreamReader sr = new StreamReader(fileStream);//reading a file
-
-                            Console.BackgroundColor = ConsoleColor.White; //colours for file reading window
-                            Console.ForegroundColor = ConsoleColor.Green;
-
-                            Console.Clear();
-                            Console.Write(sr.ReadToEnd());
-
-                            directoryMode = false; //if we entered a file, then 'directoryMode' will be false and PrintFolder() won't print any new directories
-
-                            sr.Close();
-                            fileStream.Close();
-                        }
-
-                        break;
-
-                    case ConsoleKey.Escape:
-                        if (directoryMode)
-                        {
-                            run = false; //if run is false main loop will be paused and it's means that run of code is stopped
-                        }
-                        else
-                        {
-                            directoryMode = true; //if directoryMode was false
-                        }
-                        break;
-
-                    case ConsoleKey.Backspace:
-                        if (dirs.Count > 1)
-                        {
-                            dirs.Pop();
-                        }
-                        break;
-                    case ConsoleKey.Delete:
-                        FileSystemInfo selected2 = dirs.Peek().GetSelectedObj();
-
-                        if (selected2.GetType() == typeof(DirectoryInfo))
-                        {
-                            var dirs1 = (selected2 as DirectoryInfo);
-                            //dirs.Push(new Folder(fInfos));
-                            // DirectoryInfo dirs2 = new DirectoryInfo(dirs1);
-                            foreach (DirectoryInfo dir3 in dirs1.GetDirectories())
-                            {
-                                dir3.Delete(true);
-                            }
-                        }
-
-                        break;
-                            default:
-                        break;
-                }
-            }
+            string path = @"C:\csh\PP2\Week 3\Task 1\Task 1\Filefortest";                  //Main Path
+            FarManager farManager = new FarManager(path);                      //create new object in class
+            farManager.Show();                                                 //print files, directories and headers
+            farManager.Start();                                                //call the main function to manage directories
         }
     }
 }
-
