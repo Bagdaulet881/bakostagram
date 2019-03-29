@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<MarkList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Marks>
+    <Mark>
+      <Points>95</Points>
+    </Mark>
+    <Mark>
+      <Points>85</Points>
+    </Mark>
+    <Mark>
+      <Points>57</Points>
+    </Mark>
+  </Marks>
+</MarkList>
