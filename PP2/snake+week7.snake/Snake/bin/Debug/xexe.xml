@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<Constr xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <lvl1>1</lvl1>
+  <login>n</login>
+  <xx>20</xx>
+  <yy>20</yy>
+  <cnt>0</cnt>
+  <score>-1</score>
+</Constr>

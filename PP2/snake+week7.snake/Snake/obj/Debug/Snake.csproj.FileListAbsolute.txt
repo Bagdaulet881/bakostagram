@@ -1,0 +1,24 @@
+C:\csh\newBaisakov\PP2_2019\Projects\W6\W6G4\Snake\bin\Debug\Levels\Level1.txt
+C:\csh\newBaisakov\PP2_2019\Projects\W6\W6G4\Snake\bin\Debug\Snake.exe.config
+C:\csh\newBaisakov\PP2_2019\Projects\W6\W6G4\Snake\bin\Debug\Snake.exe
+C:\csh\newBaisakov\PP2_2019\Projects\W6\W6G4\Snake\bin\Debug\Snake.pdb
+C:\csh\newBaisakov\PP2_2019\Projects\W6\W6G4\Snake\obj\Debug\Snake.csprojAssemblyReference.cache
+C:\csh\newBaisakov\PP2_2019\Projects\W6\W6G4\Snake\obj\Debug\Snake.csproj.CoreCompileInputs.cache
+C:\csh\newBaisakov\PP2_2019\Projects\W6\W6G4\Snake\obj\Debug\Snake.exe
+C:\csh\newBaisakov\PP2_2019\Projects\W6\W6G4\Snake\obj\Debug\Snake.pdb
+C:\csh\PP2\week 6\W6G4\Snake\bin\Debug\Levels\Level1.txt
+C:\csh\PP2\week 6\W6G4\Snake\bin\Debug\Snake.exe.config
+C:\csh\PP2\week 6\W6G4\Snake\bin\Debug\Snake.exe
+C:\csh\PP2\week 6\W6G4\Snake\bin\Debug\Snake.pdb
+C:\csh\PP2\week 6\W6G4\Snake\obj\Debug\Snake.csprojAssemblyReference.cache
+C:\csh\PP2\week 6\W6G4\Snake\obj\Debug\Snake.csproj.CoreCompileInputs.cache
+C:\csh\PP2\week 6\W6G4\Snake\obj\Debug\Snake.exe
+C:\csh\PP2\week 6\W6G4\Snake\obj\Debug\Snake.pdb
+C:\csh\PP2\week 6\snake\Snake\bin\Debug\Levels\Level1.txt
+C:\csh\PP2\week 6\snake\Snake\bin\Debug\Snake.exe.config
+C:\csh\PP2\week 6\snake\Snake\bin\Debug\Snake.exe
+C:\csh\PP2\week 6\snake\Snake\bin\Debug\Snake.pdb
+C:\csh\PP2\week 6\snake\Snake\obj\Debug\Snake.csprojAssemblyReference.cache
+C:\csh\PP2\week 6\snake\Snake\obj\Debug\Snake.csproj.CoreCompileInputs.cache
+C:\csh\PP2\week 6\snake\Snake\obj\Debug\Snake.exe
+C:\csh\PP2\week 6\snake\Snake\obj\Debug\Snake.pdb

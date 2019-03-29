@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<CanstrForsave xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <list>
+    <string>rer</string>
+    <string>test</string>
+    <string>testlvl3</string>
+    <string>finish test</string>
+    <string>e</string>
+    <string>e</string>
+    <string>w</string>
+    <string>n</string>
+    <string />
+    <string>w</string>
+    <string>w</string>
+    <string />
+    <string />
+    <string />
+    <string />
+  </list>
+  <listint>
+    <int>1</int>
+    <int>3</int>
+    <int>6</int>
+    <int>0</int>
+    <int>3</int>
+    <int>3</int>
+    <int>3</int>
+    <int>-1</int>
+    <int>7</int>
+    <int>6</int>
+    <int>3</int>
+    <int>3</int>
+    <int>6</int>
+    <int>4</int>
+    <int>0</int>
+  </listint>
+  <counter>15</counter>
+</CanstrForsave>
